@@ -21,6 +21,8 @@ Generates natural-language captions for images, trained on a subset of the [MS-C
 
 These are modest scores for an image-captioning model trained from scratch on a reduced COCO subset with limited compute (no pretrained captioning weights) — the project's value is in the end-to-end multi-task architecture (shared encoder, two decoder heads, custom batch generator) rather than state-of-the-art caption quality. The notebook includes qualitative examples of generated captions on held-out test images alongside the BLEU scores.
 
+**Limitations:** training ran for a single epoch (`EPOCHS = 1`, as set in the notebook, which notes that training was limited by compute). The qualitative examples show generic captions (for example "a man in a suit and tie") that often miss the image content and repeat tokens (trailing `end end end`) instead of terminating cleanly, so the scores above describe an early-stage model. More epochs, a larger subset and an attention mechanism are the obvious next steps.
+
 ## Skills demonstrated
 
 Multimodal model design (vision + language), transfer learning with a pretrained CNN encoder, custom Keras data generators for memory-efficient training on image-caption pairs, and multi-task loss design.
